@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.Contacto"
+             Title="Contacto"
+             Shell.BackgroundColor="Blue"
+             >
+
+    <ListView RowHeight="65" 
+              x:Name="biografiaDeKevin" 
+              Background="#f0fbff"
+              ItemSelected="biografiaDeKevin_ItemSelected"
+              ItemTapped="biografiaDeKevin_ItemTapped"
+              >
+        <ListView.ItemTemplate >
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Email}"></TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

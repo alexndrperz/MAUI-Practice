@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="https://www.uapa.edu.do/wp-content/uploads/2022/04/69242578_2844267382269013_3234974697401614336_n.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+            <Button
+                x:Name="MiBoton" 
+                Text="Saludado"
+                BackgroundColor="Black" 
+                FontSize="Large"
+                Clicked="OnCounterClicked"></Button>
+            
+            
+            <Label
+                Text="Clicked!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level5" />
+
+            <Label
+                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Style="{StaticResource SubHeadline}"
+                x:Name="miLabel"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+  
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.Views.EditContacto"
+             Title="Editar Contacto"
+             Shell.BackgroundColor="Blue">
+    <VerticalStackLayout Spacing="10" Margin="20,20,20,0">
+        <!--<Label Text="Aja" BackgroundColor="Gray" HorizontalOptions="Start"></Label>
+        <Label Text="Aja" BackgroundColor="Gray" HorizontalOptions="Center"></Label>
+        <Label Text="Aja" BackgroundColor="Gray" HorizontalOptions="End"></Label>-->
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5" >
+                <Label Text="Nombre" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry VerticalOptions="Center" x:Name="entryName">
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior
+                            x:Name="nameValid"
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            MinimumLength="1"   
+                            ></toolkit:TextValidationBehavior>
+                    </Entry.Behaviors>
+                </Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5" >
+                <Label Text="Email" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry VerticalOptions="Center" x:Name="entryEmail">
+                    <Entry.Behaviors>
+                        <toolkit:MultiValidationBehavior
+                            x:Name="emailValidator"
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            >
+                            
+                            <toolkit:TextValidationBehavior 
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                toolkit:MultiValidationBehavior.Error="Email es necesario"
+                                MinimumLength="1"></toolkit:TextValidationBehavior>
+
+                            <toolkit:EmailValidationBehavior 
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                toolkit:MultiValidationBehavior.Error="Formato email es invalido"></toolkit:EmailValidationBehavior>
+                        </toolkit:MultiValidationBehavior>
+                    </Entry.Behaviors>
+                </Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5" >
+                <Label Text="Teléfono" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry VerticalOptions="Center" x:Name="entryPhone"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5" >
+                <Label Text="Dirección" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry VerticalOptions="Center" x:Name="entryDirection"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Button x:Name="btnCancel" Text="Cancelar" Clicked="btnCancel_Clicked" ></Button>
+        <Button x:Name="btnUpdate" Text="Actualizar" Clicked="btnUpdate_Clicked" ></Button>
+    </VerticalStackLayout>
+</ContentPage>
